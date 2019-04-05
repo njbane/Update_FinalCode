@@ -41,12 +41,14 @@ int I2C_Slave(int board, int Serial){
 		}
 		else if(aRxBuffer[0] == 0x57){ // Drink Making
 			if(HAL_I2C_Slave_Receive(&hi2c1,DataBuffer,2,HAL_MAX_DELAY) == HAL_OK){
+				HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_12);
 				recipe_cmd(DataBuffer,board); //Function from Recipe.h to create the recipe based on the DataBuffer[0] = ID | DataBuffer[1] = quanity
 				if(Serial == 1){
 					len = sprintf(buffer, "MAKE A DRINK - 0x57");
 					HAL_UART_Transmit(&huart2,(uint8_t*)buffer,len,1000);
 					HAL_UART_Transmit(&huart2,DataBuffer,2,1000);
 				}
+				HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_12);
 			}
 			else{error = 2;}
 		}
