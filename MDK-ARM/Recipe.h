@@ -6,7 +6,7 @@
 #include <stdio.h>
 
 struct pinList{
-	int pin[8];
+	char pin[8];
 };
 
 extern struct pinList REGA1;

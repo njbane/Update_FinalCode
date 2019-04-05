@@ -86,7 +86,7 @@ int len; // Stores the length of array to be sent over the UART Line
 char buffer[15]; //Stores the char array to be sent over the UART Line
 
 /* MCP23 PV*/
-int board2Yes_No = 0; // Selects whether there are one ore two boards or not(0 - No | 1 - Yes)
+int board2Yes_No = 0; // Selects whether there are one ore two boards or not(0 - ONEBoard | 1 - TWOBoard)
 
 /* USER CODE END PV */
 
@@ -160,17 +160,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-		I2C_Slave(ID,Serial_Data);
-		if(ID[0] > 0){
-			//MAKE A DRINK
-			if(Serial_Data == 1){
-					len = sprintf(buffer, "MAKE A DRINK");
-					HAL_UART_Transmit(&huart2,(uint8_t*)buffer,len,1000);
-					HAL_UART_Transmit(&huart2,ID,2,1000);
-				}
-			
-		}
-    /* USER CODE BEGIN 3 */
+		I2C_Slave(board2Yes_No,Serial_Data); // HANDLES DRINK MAKING PROCESS
+		/* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }

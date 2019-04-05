@@ -10,6 +10,6 @@ struct data{
 
 extern struct data recipe[24];
 
-int I2C_Slave(uint8_t ID[], int Serial);
+int I2C_Slave(int board, int Serial);
 
 #endif
