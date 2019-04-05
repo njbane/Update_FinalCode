@@ -79,6 +79,7 @@ UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 uint8_t ID[2] = {0,0}; //Initials the storage of drink IDs to be created
+uint8_t regA1, regB1, regA2, regB2;
 
 /* Serial Data PV */
 int Serial_Data = 1; // Serial_Data = 1 Turns On Serial Data | Serial_Data = 0 Turns Off Serial Data
