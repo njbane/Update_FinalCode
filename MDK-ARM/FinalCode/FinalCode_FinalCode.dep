@@ -1,7 +1,7 @@
 Dependencies for Project 'FinalCode', Target 'FinalCode': (DO NOT MODIFY !)
 F (startup_stm32l476xx.s)(0x5CA62FEB)(--cpu Cortex-M4.fp --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_FinalCode-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include--pd "__UVISION_VERSION SETA 525" --pd "_RTE_ SETA 1" --pd "STM32L476xx SETA 1"--list startup_stm32l476xx.lst --xref -o finalcode\startup_stm32l476xx.o --depend finalcode\startup_stm32l476xx.d)
 F (../Core/Src/main.c)(0x5CA6B33E)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ..\MDK-ARM -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FinalCode-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o finalcode\main.o --omf_browse finalcode\main.crf --depend finalcode\main.d)
-I (../Core/Inc/main.h)(0x5CA63265)
+I (../Core/Inc/main.h)(0x5CA6BA54)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x5BFE01B5)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x5CA62FDD)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x5BFE01B6)
@@ -39,7 +39,7 @@ I (..\MDK-ARM\Pump_Valve.h)(0x5CA6B9BC)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599F75EC)
 I (..\MDK-ARM\I2C_Polling.h)(0x5CA6B9BD)
 F (../Core/Src/stm32l4xx_it.c)(0x5CA62FDC)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ..\MDK-ARM -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FinalCode-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o finalcode\stm32l4xx_it.o --omf_browse finalcode\stm32l4xx_it.crf --depend finalcode\stm32l4xx_it.d)
-I (../Core/Inc/main.h)(0x5CA63265)
+I (../Core/Inc/main.h)(0x5CA6BA54)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x5BFE01B5)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x5CA62FDD)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x5BFE01B6)
@@ -74,7 +74,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x5BFE01B6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x5BFE01B6)
 I (../Core/Inc/stm32l4xx_it.h)(0x5CA62FDC)
 F (../Core/Src/stm32l4xx_hal_msp.c)(0x5CA62FDD)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ..\MDK-ARM -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FinalCode-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o finalcode\stm32l4xx_hal_msp.o --omf_browse finalcode\stm32l4xx_hal_msp.crf --depend finalcode\stm32l4xx_hal_msp.d)
-I (../Core/Inc/main.h)(0x5CA63265)
+I (../Core/Inc/main.h)(0x5CA6BA54)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x5BFE01B5)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x5CA62FDD)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x5BFE01B6)
@@ -108,8 +108,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x5BFE01B6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x5BFE01B6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x5BFE01B6)
 F (.\Recipe.h)(0x5CA6B9BD)()
-F (.\Recipe.c)(0x5CA6B9FB)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ..\MDK-ARM -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FinalCode-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o finalcode\recipe.o --omf_browse finalcode\recipe.crf --depend finalcode\recipe.d)
-I (../Core/Inc/main.h)(0x5CA63265)
+F (.\Recipe.c)(0x5CA6BA68)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ..\MDK-ARM -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FinalCode-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o finalcode\recipe.o --omf_browse finalcode\recipe.crf --depend finalcode\recipe.d)
+I (../Core/Inc/main.h)(0x5CA6BA54)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x5BFE01B5)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x5CA62FDD)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x5BFE01B6)
@@ -148,7 +148,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599F75EC)
 I (I2C_Polling.h)(0x5CA6B9BD)
 F (.\Pump_Valve.h)(0x5CA6B9BC)()
 F (.\Pump_Valve.c)(0x5CA6B0DD)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ..\MDK-ARM -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FinalCode-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o finalcode\pump_valve.o --omf_browse finalcode\pump_valve.crf --depend finalcode\pump_valve.d)
-I (../Core/Inc/main.h)(0x5CA63265)
+I (../Core/Inc/main.h)(0x5CA6BA54)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x5BFE01B5)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x5CA62FDD)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x5BFE01B6)
@@ -183,8 +183,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x5BFE01B6)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x5BFE01B6)
 I (Pump_Valve.h)(0x5CA6B9BC)
 F (.\I2C_Polling.h)(0x5CA6B9BD)()
-F (.\I2C_Polling.c)(0x5CA6B9FB)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ..\MDK-ARM -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FinalCode-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o finalcode\i2c_polling.o --omf_browse finalcode\i2c_polling.crf --depend finalcode\i2c_polling.d)
-I (../Core/Inc/main.h)(0x5CA63265)
+F (.\I2C_Polling.c)(0x5CAE0F6C)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ..\MDK-ARM -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_FinalCode-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L476xx -DUSE_HAL_DRIVER -DSTM32L476xx-o finalcode\i2c_polling.o --omf_browse finalcode\i2c_polling.crf --depend finalcode\i2c_polling.d)
+I (../Core/Inc/main.h)(0x5CA6BA54)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x5BFE01B5)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x5CA62FDD)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x5BFE01B6)

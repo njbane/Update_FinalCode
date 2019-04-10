@@ -28,11 +28,15 @@ Project File Date:  04/04/2019
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'FinalCode'
 compiling I2C_Polling.c...
-compiling Recipe.c...
+I2C_Polling.c(19): warning:  #177-D: variable "DataBuffer"  was declared but never referenced
+  	uint8_t DataBuffer[RXBuf_Valv_Pump];
+I2C_Polling.c(22): warning:  #177-D: variable "error2"  was declared but never referenced
+  	HAL_StatusTypeDef error2;
+I2C_Polling.c: 2 warnings, 0 errors
 linking...
 Program Size: Code=15820 RO-data=496 RW-data=28 ZI-data=2460  
 FromELF: creating hex file...
-"FinalCode\FinalCode.axf" - 0 Error(s), 0 Warning(s).
+"FinalCode\FinalCode.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -55,7 +59,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.1.2
-Build Time Elapsed:  00:00:11
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>

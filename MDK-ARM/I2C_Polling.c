@@ -15,45 +15,93 @@ int I2C_Slave(int board, int Serial){
 	int board: Selects whether there are one ore two boards or not(0 - ONEBoard | 1 - TWOBoard)
 	int Serial: Turns on (1) or off(0) the serial communication for debugging
 	*/
-	int len = 0,RXBuf_Valv_Pump = 9, error = 0;
+	int len = 0,RXBuf_Valv_Pump = 10, error = 0;
 	uint8_t DataBuffer[RXBuf_Valv_Pump];
-	uint8_t aRxBuffer[1];
+	uint8_t aRxBuffer[12];
 	char buffer[15];
+	HAL_StatusTypeDef error2;
 	
 	if(Serial == 1){
 		len = sprintf(buffer, "Main");
 		HAL_UART_Transmit(&huart2, (uint8_t*) buffer, len, HAL_MAX_DELAY);
 	}
-	if(HAL_I2C_Slave_Receive(&hi2c1, aRxBuffer, 1, HAL_MAX_DELAY) == HAL_OK){
-		if(aRxBuffer[0] == 0x37){ //Fills Recipe Struct Array with recipes
-			if(HAL_I2C_Slave_Receive(&hi2c1, DataBuffer, RXBuf_Valv_Pump, HAL_MAX_DELAY) == HAL_OK){
+	if(HAL_I2C_Slave_Receive(&hi2c1, aRxBuffer, 12, HAL_MAX_DELAY) == HAL_OK){
+			if(Serial == 1){
+					len = sprintf(buffer, "\nSlaveRecieve");
+					HAL_UART_Transmit(&huart2,(uint8_t*)buffer,len,1000);
+					HAL_UART_Transmit(&huart2,aRxBuffer,12,1000);
+			}
+			if(aRxBuffer[0] == 0x37){
 				if(Serial == 1){
 					len = sprintf(buffer, "0x37");
 					HAL_UART_Transmit(&huart2,(uint8_t*)buffer,len,1000);
-					HAL_UART_Transmit(&huart2,DataBuffer,RXBuf_Valv_Pump,1000);
+					HAL_UART_Transmit(&huart2,aRxBuffer,RXBuf_Valv_Pump,1000);
 				}
 				for(int i = 0; i <4; i++){
-					recipe[(int)DataBuffer[0]].time[i] = DataBuffer[i+1]; //Stores DataBuffer in the ID
-					recipe[(int)DataBuffer[0]].valv[i] = DataBuffer[i+5];
+					recipe[(int)aRxBuffer[1]].time[i] = aRxBuffer[i+2]; //Stores DataBuffer in the ID
+					recipe[(int)aRxBuffer[1]].valv[i] = aRxBuffer[i+6];
 				}
 			}
-			else{error = 2;}
-		}
-		else if(aRxBuffer[0] == 0x57){ // Drink Making
-			if(HAL_I2C_Slave_Receive(&hi2c1,DataBuffer,2,HAL_MAX_DELAY) == HAL_OK){
-				HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_12);
-				recipe_cmd(DataBuffer,board); //Function from Recipe.h to create the recipe based on the DataBuffer[0] = ID | DataBuffer[1] = quanity
+			else if(aRxBuffer[0] == 0x57){
 				if(Serial == 1){
-					len = sprintf(buffer, "MAKE A DRINK - 0x57");
-					HAL_UART_Transmit(&huart2,(uint8_t*)buffer,len,1000);
-					HAL_UART_Transmit(&huart2,DataBuffer,2,1000);
+					len = sprintf(buffer, "\nMake Drink 0x57");
+					HAL_UART_Transmit(&huart2, (uint8_t*)buffer, len, 1000);
+					HAL_UART_Transmit(&huart2,aRxBuffer,3,1000);
 				}
 				HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_12);
+				recipe_cmd(aRxBuffer,board);
+				HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_12);
 			}
-			else{error = 2;}
+			else{
+				
+			}
+//		if(aRxBuffer[0] == 0x37){ //Fills Recipe Struct Array with recipes
+//			error2 = HAL_I2C_Slave_Receive(&hi2c1, DataBuffer, RXBuf_Valv_Pump, HAL_MAX_DELAY);
+//			if(error2 == HAL_OK){
+//				if(Serial == 1){
+//					len = sprintf(buffer, "0x37");
+//					HAL_UART_Transmit(&huart2,(uint8_t*)buffer,len,1000);
+//					HAL_UART_Transmit(&huart2,DataBuffer,RXBuf_Valv_Pump,1000);
+//				}
+//				for(int i = 0; i <4; i++){
+//					recipe[(int)DataBuffer[0]].time[i] = DataBuffer[i+1]; //Stores DataBuffer in the ID
+//					recipe[(int)DataBuffer[0]].valv[i] = DataBuffer[i+5];
+//				}
+//			}
+//			if(error2 == HAL_BUSY){
+//				len = sprintf(buffer, "HAL_BUSY");
+//				HAL_UART_Transmit(&huart2,(uint8_t*)buffer,len,1000);
+//			}
+//			if(error2 == HAL_TIMEOUT){
+//				len = sprintf(buffer, "HAL_TIMEOUT");
+//				HAL_UART_Transmit(&huart2,(uint8_t*)buffer,len,1000);
+//			}
+//			else{
+//				len = sprintf(buffer, "HAL_ERROR");
+//				HAL_UART_Transmit(&huart2,(uint8_t*)buffer,len,1000);
+//			}
+//		}
+//		else if(aRxBuffer[0] == 0x57){ // Drink Making
+//			if(HAL_I2C_Slave_Receive(&hi2c1,DataBuffer,2,HAL_MAX_DELAY) == HAL_OK){
+//				HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_12);
+//				recipe_cmd(DataBuffer,board); //Function from Recipe.h to create the recipe based on the DataBuffer[0] = ID | DataBuffer[1] = quanity
+//				if(Serial == 1){
+//					len = sprintf(buffer, "MAKE A DRINK - 0x57");
+//					HAL_UART_Transmit(&huart2,(uint8_t*)buffer,len,1000);
+//					HAL_UART_Transmit(&huart2,DataBuffer,2,1000);
+//				}
+//				HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_12);
+//			}
+//			else{error = 2;}
+		}
+
+	else{
+		error = 1;
+		if(Serial == 1){
+			len = sprintf(buffer,"ERROR");
+			HAL_UART_Transmit(&huart2, (uint8_t *)buffer, len, HAL_MAX_DELAY);
 		}
 	}
-	else{error = 1;}
 	
 	return error;
 }
