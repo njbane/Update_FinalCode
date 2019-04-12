@@ -4,7 +4,7 @@
 #include "main.h"
 
 struct data{
-	uint8_t valv[4];
+	uint8_t valv[32];
 	uint8_t time[4];
 };
 
