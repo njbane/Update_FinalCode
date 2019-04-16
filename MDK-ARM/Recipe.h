@@ -14,7 +14,7 @@ extern struct pinList REGB1;
 extern struct pinList REGA2;
 extern struct pinList REGB2;
 
-void recipe_cmd(uint8_t ID[], int board);
+void recipe_cmd(uint8_t ID[], int board, int Serial);
 void uint2pin(int ID);
 
 

@@ -161,7 +161,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-		I2C_Slave(board2Yes_No,Serial_Data); // HANDLES DRINK MAKING PROCESS
+		I2C_Slave(board2Yes_No,Serial_Data); // HANDLES DRINK MAKING PROCESS I2CPolling.h
 		/* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

@@ -53,7 +53,7 @@ int I2C_MCP23_Setup(uint8_t* reg_statA, uint8_t* reg_statB, I2C_HandleTypeDef bo
 		HAL_Delay(10);
 		write_error = I2C_MCP23018W(gpioA, 0x00, board_sl);
 		HAL_Delay(10);
-		write_error = I2C_MCP23018W(gpioB, 0x00, board_sl); // Turen the GPIO Register - Set 1 to turn off valves
+		write_error = I2C_MCP23018W(gpioB, 0x00, board_sl); // Turn the GPIO Register - Set 1 to turn off valves
 		
 		*reg_statA = 0x00;
 		*reg_statB = 0x00;
@@ -140,7 +140,7 @@ void PWM_PumpControl(int Pump_Num,int Direc,int Speed){
 	PWM_PumpControl controls the pumps by choosing which pump, direction, and speed
 	
 	Pump_Num: Select which pump to use (1-6)
-	Direc: Choose which Direction 0 - Full Stop, 1 - Forward, 2 - Backware
+	Direc: Choose which Direction 0 - Full Stop, 1 - Forward, 2 - Backward
 	Speed: Select speed of pump from 0 - 255
 	*/
 	if (Pump_Num == 1)
@@ -229,4 +229,7 @@ void PWM_PumpControl(int Pump_Num,int Direc,int Speed){
 			__HAL_TIM_SET_COMPARE(&htim4,TIM_CHANNEL_4,0);
 		}
 	}
+}
+
+void Pump_Time(uint8_t ID, int interation){
 }
