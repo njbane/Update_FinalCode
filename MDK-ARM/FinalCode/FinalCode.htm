@@ -3,9 +3,9 @@
 <title>Static Call Graph - [FinalCode\FinalCode.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image FinalCode\FinalCode.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Tue Apr 16 18:01:44 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Wed Apr 17 11:53:10 2019
 <BR><P>
-<H3>Maximum Stack Usage =        784 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        800 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 main &rArr; I2C_Slave &rArr; recipe_cmd &rArr; I2C_MCP23_ValveControl &rArr; I2C_MCP23018W &rArr; HAL_I2C_Master_Transmit &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 <P>
@@ -890,8 +890,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recipe_cmd
 </UL>
 
-<P><STRONG><a name="[ae]"></a>I2C_Slave</STRONG> (Thumb, 714 bytes, Stack size 96 bytes, i2c_polling.o(i.I2C_Slave))
-<BR><BR>[Stack]<UL><LI>Max Depth = 640<LI>Call Chain = I2C_Slave &rArr; recipe_cmd &rArr; I2C_MCP23_ValveControl &rArr; I2C_MCP23018W &rArr; HAL_I2C_Master_Transmit &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
+<P><STRONG><a name="[ae]"></a>I2C_Slave</STRONG> (Thumb, 702 bytes, Stack size 96 bytes, i2c_polling.o(i.I2C_Slave))
+<BR><BR>[Stack]<UL><LI>Max Depth = 656<LI>Call Chain = I2C_Slave &rArr; recipe_cmd &rArr; I2C_MCP23_ValveControl &rArr; I2C_MCP23018W &rArr; HAL_I2C_Master_Transmit &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit
@@ -1017,7 +1017,7 @@ Global Symbols
 <P><STRONG><a name="[df]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
 <P><STRONG><a name="[5b]"></a>main</STRONG> (Thumb, 236 bytes, Stack size 144 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 784<LI>Call Chain = main &rArr; I2C_Slave &rArr; recipe_cmd &rArr; I2C_MCP23_ValveControl &rArr; I2C_MCP23018W &rArr; HAL_I2C_Master_Transmit &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
+<BR><BR>[Stack]<UL><LI>Max Depth = 800<LI>Call Chain = main &rArr; I2C_Slave &rArr; recipe_cmd &rArr; I2C_MCP23_ValveControl &rArr; I2C_MCP23018W &rArr; HAL_I2C_Master_Transmit &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Slave
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_MCP23_Setup
@@ -1036,8 +1036,8 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[b1]"></a>recipe_cmd</STRONG> (Thumb, 1414 bytes, Stack size 248 bytes, recipe.o(i.recipe_cmd))
-<BR><BR>[Stack]<UL><LI>Max Depth = 544<LI>Call Chain = recipe_cmd &rArr; I2C_MCP23_ValveControl &rArr; I2C_MCP23018W &rArr; HAL_I2C_Master_Transmit &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
+<P><STRONG><a name="[b1]"></a>recipe_cmd</STRONG> (Thumb, 1822 bytes, Stack size 264 bytes, recipe.o(i.recipe_cmd))
+<BR><BR>[Stack]<UL><LI>Max Depth = 560<LI>Call Chain = recipe_cmd &rArr; I2C_MCP23_ValveControl &rArr; I2C_MCP23018W &rArr; HAL_I2C_Master_Transmit &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsAcknowledgeFailed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_PumpControl
 <LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_MCP23_ValveControl

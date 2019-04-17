@@ -17,7 +17,7 @@ int I2C_Slave(int board, int Serial){
 	*/
 	int len = 0,RXBuf_Valv_Pump = 10, error = 0, incre = 0;
 	uint8_t aRxBuffer[12];
-	char buffer[15];
+	char buffer[30];
 	HAL_StatusTypeDef error2;
 	
 	if(Serial == 1){
@@ -104,9 +104,8 @@ int I2C_Slave(int board, int Serial){
 				ID_BUF[0] = aRxBuffer[1]; // Storing the Drink ID to be made
 				ID_BUF[1] = aRxBuffer[2]; // Storing the quantity to be made
 				if(Serial == 1){
-					len = sprintf(buffer, "\tID_BUF[]");
+					len = sprintf(buffer, "\tID_BUF[0]: %d,IDBUF[1]: %d ", (int)ID_BUF[0], (int)ID_BUF[1]);
 					HAL_UART_Transmit(&huart2, (uint8_t*)buffer, len, 1000);
-					HAL_UART_Transmit(&huart2,ID_BUF,2,1000);
 				}
 				recipe_cmd(ID_BUF,board, Serial); // Creates the recipe stored - Recipe.h
 				HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_12); // Turns PB12 off 
